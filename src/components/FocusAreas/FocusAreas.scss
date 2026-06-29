@@ -1,0 +1,112 @@
+// ── FocusAreas – Figma "Four Key Focus Areas" section ────────────────────────
+// DS design-token overrides (values from Figma node 1172:367 / 1172:466)
+.focus-areas {
+  --sds-typography-heading-font-family:      'Montserrat', sans-serif;
+  --sds-typography-heading-font-weight:      700;
+  --sds-typography-heading-size-base:        28px;   // section title
+  --sds-typography-heading-size-small:       24px;   // card title
+  --sds-typography-heading-letter-spacing:   -0.02em;
+  --sds-typography-body-font-family:         'Open Sans', sans-serif;
+  --sds-typography-body-font-weight-regular: 400;
+
+  // local tokens
+  --fa-blue:        #1841ca;
+  --fa-text-dark:   #000000;
+  --fa-text-muted:  #6a6a6a;
+  --fa-border:      #1841ca;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 56px var(--page-px);
+  background-color: #ffffff;
+  text-align: left;
+
+  // ── Section title ──────────────────────────────────────────────────────────
+  &__title {
+    font-family:     var(--sds-typography-heading-font-family);
+    font-weight:     var(--sds-typography-heading-font-weight);
+    font-size:       var(--sds-typography-heading-size-base);
+    letter-spacing:  var(--sds-typography-heading-letter-spacing);
+    line-height:     1.2;
+    color:           var(--fa-blue);
+    text-align:      center;
+    margin:          0 0 40px;
+  }
+
+  // ── 4-column card grid ─────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  // ── DS Card overrides ─────────────────────────────────────────────────────
+  &__card {
+    border:     none;
+    box-shadow: none;
+
+    // Remove the lift/scale hover effect
+    &:hover {
+      box-shadow:  none;
+      transform:   none;
+    }
+
+    // Image container: use a 4:3 aspect ratio to match the Figma card proportions
+    .ds-card__media-frame {
+      aspect-ratio: 4 / 3;
+    }
+
+    // Card title — override DS hardcoded 28px/Noto Sans
+    //              → use Figma Heading/Small tokens
+    .ds-card__title {
+      font-family:    var(--sds-typography-heading-font-family);
+      font-weight:    var(--sds-typography-heading-font-weight);
+      font-size:      var(--sds-typography-heading-size-small);
+      letter-spacing: var(--sds-typography-heading-letter-spacing);
+      line-height:    1.2;
+      color:          var(--fa-text-dark);
+    }
+
+    // Card body text — override DS muted gray → Figma body color
+    .ds-card__text {
+      font-family:  var(--sds-typography-body-font-family);
+      font-weight:  var(--sds-typography-body-font-weight-regular);
+      font-size:    16px;
+      line-height:  1.55;
+      color:        var(--fa-text-muted);
+    }
+
+    // Tighten body padding slightly
+    .ds-card__body {
+      gap: 10px;
+    }
+  }
+
+  // ── Responsive ─────────────────────────────────────────────────────────────
+  @media (width <= 1100px) {
+    padding: 48px var(--page-px);
+  }
+
+  @media (width <= 900px) {
+    padding: 40px var(--page-px);
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  }
+
+  @media (width <= 640px) {
+    padding: 32px var(--page-px);
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 28px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

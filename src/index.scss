@@ -1,4 +1,7 @@
 :root {
+  // ── Page-level spacing from Figma (160px at 1440px canvas) ────────────────
+  --page-px: clamp(20px, 11.11vw, 160px);
+
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -51,11 +54,8 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
