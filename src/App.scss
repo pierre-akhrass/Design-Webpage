@@ -1,3 +1,46 @@
+.rounded-btn {
+  border-radius: 9999px;
+}
+
+// Override design system #2a3c50 → #FEFEFE
+.ds-navbar--mode-dark {
+  background: #FEFEFE !important;
+  color: #153CBD !important;
+}
+
+.ds-navbar--mode-dark .ds-navbar__logo,
+.ds-navbar--mode-dark .ds-navbar__actions,
+.ds-navbar--mode-dark .ds-navbar__burger {
+  color: #153CBD !important;
+}
+
+.ds-nav-item--mode-dark {
+  color: #153CBD !important;
+}
+
+.ds-nav-item--mode-dark.ds-nav-item--shape-pill:hover {
+  background: #e9ecf0 !important;
+}
+
+.ds-navbar--mode-dark .ds-navbar__mobile-drawer {
+  background: #FEFEFE !important;
+}
+
+.ds-sidebar--mode-dark {
+  background: #FEFEFE !important;
+  color: #153CBD !important;
+}
+
+.ds-button--filled {
+  background-color: #153CBD !important;
+  border-color: #153CBD !important;
+}
+
+.ds-navbar__items {
+  justify-content: center;
+  flex: 1;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -17,6 +60,9 @@
   }
 }
 
+#root {
+  width:100%}
+   
 .hero {
   position: relative;
 
