@@ -332,6 +332,16 @@
 .hero-media .ds-media--video {
   aspect-ratio: 283 / 220;
 }
+
+.ds-media__overlay {
+    /* opacity: .05; */
+    /* pointer-events: none; */
+    z-index: 1;
+    background-color: transparent;
+    
+    inset: 0;
+}
+
 .hero-content {
   display: flex;
   flex-direction: column;
