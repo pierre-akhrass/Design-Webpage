@@ -28,7 +28,7 @@
   // ── DS Card overrides ──────────────────────────────────────────────────────
   &__card {
     // Figma Drop Shadow/300 — two layered subtle shadows
-    border:     none;
+    overflow:   hidden;
     box-shadow: 0 4px 2px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.05);
 
     // No hover lift — stats cards are static
@@ -42,12 +42,12 @@
     // No fixed height on the frame — it sizes to its content.
     .ds-card__media-frame {
       aspect-ratio:    unset;
-      height:          auto;
+      height:          127px;  // fixed: 38px top-pad + 73px max-icon + 16px bottom-pad
       display:         flex;
       align-items:     center;
       justify-content: center;
       padding:         38px 24px 16px; // 38px top = Figma 13.4% × 280px
-      background:      transparent;
+      background: #ffffff !important;
 
       img {
         display:    block;
