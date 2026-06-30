@@ -9,7 +9,7 @@
   // DS Checkbox tokens (dark background overrides)
   --sds-color-text-default-secondary:     #ffffff;
   --sds-color-background-default-default: transparent;
-  --sds-color-border-default-default:     rgba(255, 255, 255, 0.6);
+  --sds-color-border-default-default:     #ffffff;
   --sds-color-background-brand-default:   #ffffff;
 
   background-color: var(--tf-blue);
@@ -17,7 +17,7 @@
   width: 100%;
   text-align: left;
   color: var(--tf-white);
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
   // ── Header ─────────────────────────────────────────────────────────────────
   &__header {
@@ -93,6 +93,7 @@
 
   &__nl-title {
     color: var(--tf-white);
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.4;
@@ -115,9 +116,9 @@
     outline: none;
     color: var(--tf-white);
     font-size: 14px;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 
-    &::placeholder { color: var(--tf-white-60); }
+    &::placeholder { color: #87caff; }
   }
 
   .ds-button.taleed-footer__email-btn {
@@ -127,7 +128,7 @@
     min-width: 32px;
     padding: 0;
     border-radius: 50%;
-    border-color: var(--tf-white-60);
+    border-color: transparent;
     color: var(--tf-white);
     background-color: transparent;
     box-shadow: none;
@@ -135,8 +136,8 @@
     svg { width: 16px; height: 16px; }
 
     &:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.15);
-      border-color: var(--tf-white);
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: transparent;
       box-shadow: none;
     }
   }
@@ -147,17 +148,23 @@
       color: var(--tf-white);
       font-size: 13px;
     }
+
+    &.ds-checkbox--checked .ds-checkbox__box svg path {
+      stroke: var(--tf-blue);
+    }
   }
 
   &__terms-link {
-    color: var(--tf-white);
+    color: #87caff;
     text-decoration: underline;
     &:hover { opacity: 0.8; }
   }
 
   &__legal {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 160px;
   }
 
   &__legal-link {
@@ -165,7 +172,6 @@
     text-decoration: none;
     font-size: 12px;
     line-height: 1.5;
-    white-space: nowrap;
 
     &:hover { color: var(--tf-white); }
   }
@@ -190,6 +196,7 @@
 
     .ds-footer__column-title {
       color: var(--tf-white);
+      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
       font-weight: 700;
       text-transform: none;
@@ -226,6 +233,7 @@
 
   &__resources-title {
     color: var(--tf-white);
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
     margin: 0;

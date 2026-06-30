@@ -1,4 +1,5 @@
-﻿import { Footer, Button, Checkbox } from 'ogilvy-design-system';
+﻿import { useState } from 'react';
+import { Footer, Button, Checkbox } from 'ogilvy-design-system';
 import taleedLogoWhite from '../../assets/taleed-logo-white.svg';
 import './TaleedFooter.scss';
 
@@ -12,9 +13,9 @@ const ArrowCircleRightIcon = () => (
   </svg>
 );
 
-const ArrowRightIcon = () => (
+const ChevronRightIcon = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-    <path d="M3 8h10M8 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -60,6 +61,7 @@ const navColumns = [
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export function TaleedFooter() {
+  const [agreed, setAgreed] = useState(false);
   return (
     <div className="taleed-footer">
 
@@ -98,13 +100,14 @@ export function TaleedFooter() {
             <Button
               variant="outlined"
               iconOnly
-              icon={<ArrowRightIcon />}
+              icon={<ChevronRightIcon />}
               className="taleed-footer__email-btn"
               aria-label="Subscribe"
             />
           </div>
           <Checkbox
-            state="unchecked"
+            state={agreed ? 'checked' : 'unchecked'}
+            onChange={() => setAgreed(v => !v)}
             label={
               <>
                 I agree to the{' '}
