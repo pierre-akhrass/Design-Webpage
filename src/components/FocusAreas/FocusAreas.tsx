@@ -2,7 +2,6 @@ import { Card, CardMedia, CardBody, CardTitle, CardText } from 'ogilvy-design-sy
 import { SectionTitle } from '../SectionTitle/SectionTitle';
 import './FocusAreas.scss';
 
-// ── Figma asset URLs (valid 7 days – replace with production images) ──────────
 const imgSustainability = 'https://www.figma.com/api/mcp/asset/61b9ba51-a387-437f-9d63-dea69f49610a';
 const imgManufacturing  = 'https://www.figma.com/api/mcp/asset/19c71521-caa1-4fde-8f8e-4921422ebbdf';
 const imgIndustrial     = 'https://www.figma.com/api/mcp/asset/1f8cd901-875c-46f7-a5d3-2df9f5d88ae0';
