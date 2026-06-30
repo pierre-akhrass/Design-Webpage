@@ -22,16 +22,7 @@
   text-align: left;
 
   // ── Section title ──────────────────────────────────────────────────────────
-  &__title {
-    font-family:     var(--sds-typography-heading-font-family);
-    font-weight:     var(--sds-typography-heading-font-weight);
-    font-size:       var(--sds-typography-heading-size-base);
-    letter-spacing:  var(--sds-typography-heading-letter-spacing);
-    line-height:     1.2;
-    color:           var(--fa-blue);
-    text-align:      center;
-    margin:          0 0 40px;
-  }
+  // Styles and spacing (70px MB) live in SectionTitle.scss.
 
   // ── 4-column card grid ─────────────────────────────────────────────────────
   &__grid {

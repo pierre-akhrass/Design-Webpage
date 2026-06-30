@@ -1,4 +1,5 @@
 import { Card, CardMedia, CardBody, CardTitle, CardText } from 'ogilvy-design-system';
+import { SectionTitle } from '../SectionTitle/SectionTitle';
 import './FocusAreas.scss';
 
 // ── Figma asset URLs (valid 7 days – replace with production images) ──────────
@@ -47,7 +48,7 @@ const CARDS = [
 export function FocusAreas() {
   return (
     <section className="focus-areas">
-      <h2 className="focus-areas__title">Four Key Focus Areas</h2>
+      <SectionTitle className="focus-areas__title">Four Key Focus Areas</SectionTitle>
 
       <div className="focus-areas__grid">
         {CARDS.map((card) => (

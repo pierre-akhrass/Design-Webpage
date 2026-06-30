@@ -1,0 +1,116 @@
+// ── ImpactStats – "Aramco Taleed's Impact at a Glance" section ───────────────
+// DS design-token overrides (values from Figma nodes 1172:365 / 1172:391-432)
+.impact-stats {
+  --sds-typography-heading-font-family: 'Montserrat', sans-serif;
+  --sds-typography-heading-font-weight: 700;
+  --sds-typography-heading-size-large:  32px; // section title (Figma: 32px)
+
+  // Figma DS token values referenced in the cards
+  --sds-color-text-brand-tertiary:   #429cff; // stat number colour
+  --sds-color-text-default-default:  #2d2d2d; // card label colour
+
+  box-sizing:       border-box;
+  width:            100%;
+  padding:          64px var(--page-px);
+  background-color: #ffffff;
+
+  // ── Section title ──────────────────────────────────────────────────────────
+  // Styles and spacing (70px MB) live in SectionTitle.scss.
+
+  // ── 3-column card grid ─────────────────────────────────────────────────────
+  &__grid {
+    display:               grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:                   24px;
+    align-items:           stretch;
+  }
+
+  // ── DS Card overrides ──────────────────────────────────────────────────────
+  &__card {
+    // Figma Drop Shadow/300 — two layered subtle shadows
+    border:     none;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.05);
+
+    // No hover lift — stats cards are static
+    &:hover {
+      box-shadow: 0 4px 2px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.05);
+      transform: none;
+    }
+
+    // Media frame: icons rendered at exact Figma pixel size via screenshot URLs.
+    // card1=75×73px  card2=75×56px  card3=71×59px
+    // No fixed height on the frame — it sizes to its content.
+    .ds-card__media-frame {
+      aspect-ratio:    unset;
+      height:          auto;
+      display:         flex;
+      align-items:     center;
+      justify-content: center;
+      padding:         38px 24px 16px; // 38px top = Figma 13.4% × 280px
+      background:      transparent;
+
+      img {
+        display:    block;
+        width:      auto !important;
+        height:     auto !important;
+        max-width:  none !important;
+        object-fit: none !important; // render at natural 1:1 pixel size
+      }
+    }
+
+    // Centre all body content — no top padding (media frame already provides gap)
+    .ds-card__body {
+      align-items: center;
+      text-align:  center;
+      padding:     16px 24px 36px;
+      gap:         0;
+    }
+
+    // Stat value: Figma — Montserrat SemiBold 64px, #429cff, ls -1.28px
+    .ds-card__stat {
+      justify-content: center;
+      margin:          16px 0 14px;
+    }
+
+    .ds-card__stat-value {
+      font-family:    var(--sds-typography-heading-font-family);
+      font-weight:    600; // SemiBold
+      font-size:      64px;
+      letter-spacing: -1.28px;
+      line-height:    1.2;
+      color:          var(--sds-color-text-brand-tertiary);
+    }
+
+    // Card label: Figma — Montserrat SemiBold 20px, #2d2d2d, ls -0.4px
+    .ds-card__title {
+      font-family:    var(--sds-typography-heading-font-family);
+      font-weight:    600; // SemiBold
+      font-size:      20px;
+      letter-spacing: -0.4px;
+      line-height:    1.3;
+      color:          var(--sds-color-text-default-default);
+      text-align:     center;
+    }
+  }
+
+
+  // ── Responsive ─────────────────────────────────────────────────────────────
+  @media (width <= 900px) {
+    padding: 48px var(--page-px);
+
+    &__grid {
+      grid-template-columns: 1fr;
+      max-width: 420px;
+      margin-inline: auto;
+    }
+  }
+
+  @media (width <= 640px) {
+    padding: 40px var(--page-px);
+
+    &__title {
+      font-size:     24px;
+      margin-bottom: 32px;
+    }
+  }
+}

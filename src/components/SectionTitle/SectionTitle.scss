@@ -1,0 +1,16 @@
+// ── SectionTitle – shared heading (Figma node 1172:365) ──────────────────────
+// Montserrat Bold 700 | 32px | #153cbd | centered | ls -0.64px | lh 1.2
+.section-title {
+  font-family:    'Montserrat', sans-serif;
+  font-weight:    700;
+  font-size:      32px;
+  letter-spacing: -0.64px;
+  line-height:    1.2;
+  color:          #153cbd;
+  text-align:     center;
+  margin:         0 0 70px; // spacing is controlled by the parent section
+
+  @media (width <= 640px) {
+    font-size: 24px;
+  }
+}
