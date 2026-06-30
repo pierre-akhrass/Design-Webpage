@@ -6,6 +6,9 @@
     "module": "esnext",
     "types": ["vite/client"],
     "skipLibCheck": true,
+    "paths": {
+      "ogilvy-design-system": ["./src/ogilvy-design-system.d.ts"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
