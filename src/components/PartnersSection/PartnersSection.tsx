@@ -10,21 +10,37 @@ const partners = [
   { logo: "/images/partners/partner-6.png", name: "Partner 6" },
 ];
 
-const visibleItems = 5;
+const repeatedPartners = [...partners, ...partners];
 
 export default function PartnersSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   const goNext = () => {
-    setActiveIndex((current) =>
-      current === partners.length - 1 ? 0 : current + 1
-    );
+    setIsAnimating(true);
+    setActiveIndex((current) => current + 1);
   };
 
   useEffect(() => {
-    const interval = window.setInterval(goNext, 4000);
+    const interval = window.setInterval(() => {
+      goNext();
+    }, 4500);
+
     return () => window.clearInterval(interval);
   }, []);
+
+  const handleTransitionEnd = () => {
+    if (activeIndex >= partners.length) {
+      setIsAnimating(false);
+      setActiveIndex(0);
+
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+          setIsAnimating(true);
+        });
+      });
+    }
+  };
 
   return (
     <section className="partners-section">
@@ -32,12 +48,15 @@ export default function PartnersSection() {
 
       <div className="partners-section__strip">
         <div
-          className="partners-section__track"
+          className={`partners-section__track ${
+            isAnimating ? "is-animating" : ""
+          }`}
           style={{
-            transform: `translateX(-${activeIndex * (100 / visibleItems)}%)`,
+            transform: `translateX(calc(var(--partners-logo-width) * -${activeIndex}))`,
           }}
+          onTransitionEnd={handleTransitionEnd}
         >
-          {[...partners, ...partners].map((partner, index) => (
+          {repeatedPartners.map((partner, index) => (
             <button
               key={`${partner.name}-${index}`}
               type="button"
@@ -45,7 +64,7 @@ export default function PartnersSection() {
               onClick={goNext}
               aria-label={partner.name}
             >
-              <img src={partner.logo} alt={partner.name} />
+              <img src={partner.logo} alt={partner.name} draggable="false" />
             </button>
           ))}
         </div>

@@ -1,0 +1,107 @@
+.opportunities-section {
+    --opportunities-bg: var(--sds-color-background-default-secondary, #f9f9f9);
+    --opportunities-title-color: var(--sds-color-brand-primary-500, #214fd6);
+    --opportunities-card-bg: var(--sds-color-background-default-default, #ffffff);
+/* Override Design System tokens for this section */
+--sds-color-text-default-default: #2d2d2d;
+--sds-color-text-default-secondary: #737373;
+
+--opportunities-heading-color: var(--sds-color-text-default-default);
+--opportunities-text-color: var(--sds-color-text-default-secondary);
+    --opportunities-font: var(
+      --sds-typography-heading-font-family,
+      "Montserrat",
+      sans-serif
+    );
+  
+    background-color: var(--opportunities-bg);
+    padding: 88px 24px 108px;
+  }
+  
+  .opportunities-section__title {
+    margin: 0 0 72px;
+  
+    color: var(--opportunities-title-color);
+  
+    font-family: var(--opportunities-font);
+    font-size: 32px;
+    font-weight: var(--sds-typography-heading-font-weight, 700);
+    line-height: 120%;
+    text-align: center;
+  }
+  
+  .opportunities-section__grid {
+    max-width: 1320px;
+    margin: 0 auto;
+  
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+  }
+  
+  .opportunities-card {
+    min-height: 365px;
+    padding: 34px 36px 40px;
+  
+    background: var(--opportunities-card-bg);
+    border-radius: 16px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+  border: none;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .opportunities-card__icon {
+  
+    width: 48px;
+    height: 48px;
+    color: var(--opportunities-title-color);
+    font-size: 28px;
+    line-height: 1;
+  }
+  
+  .opportunities-card__title {
+    color: var(--sds-color-text-default-default);
+  
+    font-family: var(--sds-typography-heading-font-family);
+    font-size: var(--sds-typography-heading-size-base);
+    font-weight: var(--sds-typography-heading-font-weight);
+    line-height: 120%;
+  }
+  
+  .opportunities-card__text {
+    color: var(--sds-color-text-default-secondary);
+    line-height: normal;
+
+
+    font-family: var(--sds-typography-body-font-family);
+    font-size: var(--sds-typography-body-size-medium);
+    font-weight: var(--sds-typography-body-font-weight-regular);
+  }
+  
+  
+  .opportunities-card__link {
+    margin-top: auto;
+  
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  
+    color: var(--opportunities-title-color);
+  
+    font-family: var(--opportunities-font);
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 900px) {
+    .opportunities-section__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  
+    .opportunities-section__title {
+      font-size: 28px;
+    }
+  }

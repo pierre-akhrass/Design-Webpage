@@ -182,3 +182,23 @@
     border-right-color: var(--border);
   }
 }
+.app {
+  --sds-color-text-default-secondary: #2D2D2D;
+}
+:root {
+  /* Body */
+  --sds-typography-body-font-family: "Open Sans", sans-serif;
+  --sds-typography-body-size-medium: 18px;
+  --sds-typography-body-font-weight-regular: 200;
+
+  /* Heading */
+  --sds-typography-heading-font-family: "Montserrat", sans-serif;
+  --sds-typography-heading-size-base: 28px;
+  --sds-typography-heading-font-weight: 700;
+
+  /* Colors */
+  --sds-color-text-default-default: #2d2d2d;
+  --sds-color-text-default-secondary: #737373;
+
+  --sds-color-background-default-default: #fefefe;
+}
