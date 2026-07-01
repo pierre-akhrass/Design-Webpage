@@ -1,16 +1,17 @@
-import './App.scss'
-import NavbarSection from './components/NavbarSection'
-import HeroSection from './components/HeroSection'
-import ServicesSection from './components/ServicesSection'
+import "./App.scss";
+import HeroSection from "./components/HeroSection/HeroSection";
+import PartnersSection from "./components/PartnersSection/PartnersSection";
+import OpportunitiesSection from "./components/OpportunitiesSection/OpportunitiesSection";
 
 function App() {
   return (
-    <>
-      <NavbarSection />
+    <main className="app">
       <HeroSection />
-      <ServicesSection />
-    </>
-  )
+      <OpportunitiesSection />
+      <PartnersSection />
+
+    </main>
+  );
 }
 
-export default App
+export default App;
