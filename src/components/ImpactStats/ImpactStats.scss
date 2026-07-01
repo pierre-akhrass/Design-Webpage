@@ -6,7 +6,9 @@
 
   box-sizing:       border-box;
   width:            100%;
-  padding:          64px var(--page-px);
+  max-width:        1200px;
+  margin-inline:    auto;
+  padding:          64px 48px;
   background-color: #ffffff;
 
   &__grid {
@@ -76,7 +78,7 @@
   }
 
   @media (width <= 900px) {
-    padding: 48px var(--page-px);
+    padding: 48px 24px;
 
     &__grid {
       grid-template-columns: 1fr;
@@ -86,6 +88,6 @@
   }
 
   @media (width <= 640px) {
-    padding: 40px var(--page-px);
+    padding: 40px 20px;
   }
 }
