@@ -1,6 +1,6 @@
 import { Button, Media } from 'ogilvy-design-system'
 
-export default function HeroSection() {
+export default function TaleedOpportunities() {
   return (
     <section className="hero-section">
       <div className="hero-media">

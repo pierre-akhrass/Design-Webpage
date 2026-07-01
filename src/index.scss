@@ -1,7 +1,7 @@
 :root {
   --font-family-primary: "Montserrat", sans-serif;
   color: #ffffff;
-  background: #061629;
+  background: #ffffff;
 }
 
 * {
@@ -19,6 +19,13 @@ body,
 body {
   margin: 0;
   overflow-x: hidden;
+}
+
+// Override ogilvy-design-system's `body { background-color:#fffdf2 }`.
+// `html body` (specificity 0,0,2) beats the library's plain `body` (0,0,1),
+// so this wins regardless of CSS import order.
+html body {
+  background-color: #ffffff;
 }
 html,
 body,
