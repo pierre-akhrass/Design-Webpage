@@ -1,0 +1,360 @@
+﻿.taleed-footer {
+  // ── Design tokens ──────────────────────────────────────────────────────────
+  --tf-blue:     #2032d1;
+  --tf-white:    #ffffff;
+  --tf-white-60: rgba(255, 255, 255, 0.6);
+  --tf-white-25: rgba(255, 255, 255, 0.25);
+  --tf-white-18: rgba(255, 255, 255, 0.18);
+
+  // DS Checkbox tokens (dark background overrides)
+  --sds-color-text-default-secondary:     #ffffff;
+  --sds-color-background-default-default: transparent;
+  --sds-color-border-default-default:     #ffffff;
+  --sds-color-background-brand-default:   #ffffff;
+
+  background-color: var(--tf-blue);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  color: var(--tf-white);
+  font-family: 'Open Sans', sans-serif;
+
+  // ── Header ─────────────────────────────────────────────────────────────────
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px var(--page-px) 32px;
+  }
+
+  &__logo {
+    display: block;
+    height: 52px;
+    width: auto;
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__cta-label {
+    color: var(--tf-white);
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  .ds-button.taleed-footer__cta-btn {
+    background-color: var(--tf-white);
+    color: var(--tf-blue);
+    border-color: var(--tf-white);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: none;
+
+    &:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.92);
+      border-color: rgba(255, 255, 255, 0.92);
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px var(--tf-blue), 0 0 0 4px var(--tf-white);
+    }
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid var(--tf-white-25);
+    margin: 0 var(--page-px);
+  }
+
+  // ── Body: 4-column grid ────────────────────────────────────────────────────
+  // newsletter(1fr) | Services+About(2fr) | Resources(1fr)
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 0 40px;
+    padding: 48px var(--page-px) 56px;
+    align-items: start;
+  }
+
+  // ── Newsletter column ──────────────────────────────────────────────────────
+  &__newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__nl-title {
+    color: var(--tf-white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  &__email-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--tf-white-60);
+    padding-bottom: 10px;
+  }
+
+  &__email-input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--tf-white);
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+
+    &::placeholder { color: #87caff; }
+  }
+
+  .ds-button.taleed-footer__email-btn {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    padding: 0;
+    border-radius: 50%;
+    border-color: transparent;
+    color: var(--tf-white);
+    background-color: transparent;
+    box-shadow: none;
+
+    svg { width: 16px; height: 16px; }
+
+    &:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  // DS Checkbox — color overrides via tokens above
+  &__checkbox {
+    .ds-checkbox__label {
+      color: var(--tf-white);
+      font-size: 13px;
+    }
+
+    &.ds-checkbox--checked .ds-checkbox__box svg path {
+      stroke: var(--tf-blue);
+    }
+  }
+
+  &__terms-link {
+    color: #87caff;
+    text-decoration: underline;
+    &:hover { opacity: 0.8; }
+  }
+
+  &__legal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 160px;
+  }
+
+  &__legal-link {
+    color: var(--tf-white-60);
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1.5;
+
+    &:hover { color: var(--tf-white); }
+  }
+
+  // ── DS Footer nav wrapper ─────────────────────────────────────────────────
+  &__nav-wrapper {
+    .ds-footer {
+      background-color: transparent;
+    }
+
+    .ds-footer__nav {
+      padding: 0;
+      gap: 0;
+    }
+
+    .ds-footer__sections {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 16px;
+    }
+
+    .ds-footer__column { gap: 0; }
+
+    .ds-footer__column-title {
+      color: var(--tf-white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+      padding: 0 0 16px;
+      margin: 0;
+    }
+
+    .ds-footer__column-link {
+      color: var(--tf-white);
+      font-size: 14px;
+      font-weight: 400;
+      padding: 6px 0;
+      height: auto;
+      border-radius: 0;
+      background: transparent;
+      text-align: left;
+
+      &:hover {
+        background: transparent;
+        color: var(--tf-white-60);
+      }
+    }
+
+    .ds-footer__bottom { display: none; }
+  }
+
+  // ── Resources column ───────────────────────────────────────────────────────
+  &__resources {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__resources-title {
+    color: var(--tf-white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 0 16px;
+  }
+
+  &__resources-link {
+    color: var(--tf-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 6px 0;
+    display: block;
+    line-height: 1.5;
+
+    &:hover { color: var(--tf-white-60); }
+  }
+
+  // ── Social icon buttons ────────────────────────────────────────────────────
+  &__social {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .ds-button.taleed-footer__social-btn {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--tf-white-18);
+    border: none;
+    color: var(--tf-white);
+    box-shadow: none;
+
+    svg { width: 16px; height: 16px; }
+
+    &:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.28);
+      box-shadow: none;
+    }
+  }
+
+  // ── Responsive: large tablet (900-1100px) ──────────────────────────────────
+  @media (width <= 1100px) {
+    &__header  { padding: 40px var(--page-px) 28px; }
+    &__divider { margin: 0 var(--page-px); }
+    &__body    { padding: 40px var(--page-px) 48px; gap: 0 32px; }
+  }
+
+  // ── Responsive: tablet (640-900px) ────────────────────────────────────────
+  @media (width <= 900px) {
+    &__header  { padding: 32px var(--page-px) 24px; }
+    &__divider { margin: 0 var(--page-px); }
+
+    &__body {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 40px 32px;
+      padding: 32px var(--page-px) 48px;
+    }
+
+    // Newsletter spans full width on first row
+    &__newsletter { grid-column: 1 / -1; }
+
+    // Nav wrapper: second row, first column
+    &__nav-wrapper { grid-column: 1; grid-row: 2; }
+
+    // Resources: second row, second column
+    &__resources { grid-column: 2; grid-row: 2; }
+
+    &__nav-wrapper .ds-footer__sections {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  // ── Responsive: mobile (< 640px) ──────────────────────────────────────────
+  @media (width <= 640px) {
+    &__header {
+      padding: 24px var(--page-px) 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    &__cta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    &__divider { margin: 0 var(--page-px); }
+
+    &__body {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 32px var(--page-px) 48px;
+    }
+
+    // All columns: single column, natural stack order
+    &__newsletter { grid-column: 1; }
+    &__nav-wrapper { grid-column: 1; grid-row: auto; }
+    &__resources   { grid-column: 1; grid-row: auto; }
+
+    // At mobile, show Services + About side-by-side
+    &__nav-wrapper .ds-footer__sections {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // ── Responsive: very small (< 400px) ──────────────────────────────────────
+  @media (width <= 400px) {
+    &__nav-wrapper .ds-footer__sections {
+      grid-template-columns: 1fr;
+    }
+
+    &__legal {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
